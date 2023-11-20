@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Your OpenAI API key (replace with your actual key)
-openai.api_key = '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'
+openai.api_key = ''
 
 # Streamlit UI Configuration
 st.set_page_config(page_title="SQL Query Generator", layout="wide")
