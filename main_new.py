@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Your OpenAI API key (replace with your actual key)
-openai.api_key = ''
+openai.api_key = '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'
 
 # Streamlit UI Configuration
 st.set_page_config(page_title="SQL Query Generator", layout="wide")
@@ -119,7 +119,7 @@ def ask_final(question, document_text):
 
 def separate_code_and_text(response):
     # Pattern to extract the python code
-    code_pattern = re.compile(r'\[EXAMPLE.*?\](.*?)\[END OF EXAMPLE.*?\]', re.DOTALL)
+    code_pattern = re.compile(r'```python(.*?)```', re.DOTALL)
     code_segments = code_pattern.findall(response)
 
     # Extracting all python code segments
@@ -162,7 +162,7 @@ with col2:
 
         if python_code:
         # Clean up the python code if necessary
-        python_code = python_code.replace("```python", "").replace("```", "")
+        #python_code = python_code.replace("```python", "").replace("```", "")
         
         # Display the code in the app
         st.code(python_code)
